@@ -30,13 +30,17 @@ const styles = {
 
 const Header = ({ auth, classes }) => {
   const authButton = auth ? (
-    <Button color="contrast">
-      <a className={classes.linkHeader} href="/api/logout">Logout</a>
-    </Button>
+    <a className={classes.linkHeader} href="/api/logout">
+      <Button color="contrast">
+        Logout
+      </Button>
+    </a>
   ) : (
-    <Button color="contrast">
-      <a className={classes.linkHeader} href="/api/auth/google">Login</a>
-    </Button>
+    <a className={classes.linkHeader} href="/api/auth/google">
+      <Button color="contrast">
+        Login
+      </Button>
+    </a>
   );
 
   return (
@@ -51,12 +55,14 @@ const Header = ({ auth, classes }) => {
               Corretora
             </Typography>
           </Link>
-          <Button color="contrast">
-            <Link to="/users" className={classes.linkHeader}>Users</Link>
-          </Button>
-          <Button color="contrast">
-            <Link to="/admins" className={classes.linkHeader}>Admins</Link>
-          </Button>
+          <Link to="/users" className={classes.linkHeader}>
+            <Button color="contrast">Users</Button>
+          </Link>
+          <Link to="/admins" className={classes.linkHeader}>
+            <Button color="contrast">
+              Admins
+            </Button>
+          </Link>
           {authButton}
         </Toolbar>
       </AppBar>
