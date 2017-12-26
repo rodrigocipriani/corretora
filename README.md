@@ -2,7 +2,9 @@
 
 ## todo
 
+- Acessar APIs
+- Colocar /api com webpack
 - Criar ambiente em docker
 - Alterar banco de dados para postgress
-- Acessar APIs
+- Arrumar autenticação
 - Colocar botões do menu para direita

@@ -5,6 +5,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const keys = require('./config/keys');
+//import keys from './config/keys';
 require('./models/User');
 require('./services/passport');
 
@@ -26,6 +27,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/userRoutes')(app);
+require('./routes/exchangesRoutes')(app);
 app.get('/', (req, res) => {
   let adminContent = `
     <div>
