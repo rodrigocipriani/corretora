@@ -22,7 +22,7 @@ module.exports = app => {
     // Melhor compra
     const bitcoinTradeBuy = tickers['bitcoinTrade'].ticker.buy;
     const mercadoBitcoinBuy = tickers['mercadoBitcoin'].ticker.buy;
-    let melhorCompra = "Melhor compra: ";
+    let melhorCompra = "!!!Melhor compra: ";
     if(bitcoinTradeBuy < mercadoBitcoinBuy){
       melhorCompra += "Bitcoin Trade: " + bitcoinTradeBuy + " vs " + mercadoBitcoinBuy + " != " + (mercadoBitcoinBuy-bitcoinTradeBuy);
     }else{

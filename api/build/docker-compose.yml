@@ -1,0 +1,32 @@
+version: '3'
+
+services: 
+
+    mongo:  
+      image: mongo:3.0.4  
+      ports:  
+      - "27017:27017"  
+      volumes:  
+      - './data:/data/db'  
+      networks: 
+        - production-network
+
+    likeapp:
+      build:
+        dockerfile: ./Dockerfile
+        context: .
+      command: ["npm", "start"]
+      container_name: corretora
+      depends_on:
+        - "mongo"
+      image: rodrigocipriani/corretora
+      networks: 
+        - production-network
+      ports: 
+        -  "5000:5000"
+      volumes:
+      - .:/home/app
+
+networks: 
+  production-network:
+    driver: bridge
