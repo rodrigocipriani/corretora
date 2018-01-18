@@ -1,29 +1,35 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const path = require('path');
+const webpackNodeExternals = require('webpack-node-externals');
 
-var config = {
-  context: __dirname + '/src', // `__dirname` is root of project and `src` is source
+const SOURCE_FOLDER = path.resolve(__dirname, './src');
+
+const config = {
+  context: SOURCE_FOLDER,
   entry: {
-    app: './index.js',
+    app: './app.js',
   },
   output: {
-    path: __dirname + '/build', // `dist` is the destination
-    publicPath: "/assets/",
+    path: path.resolve('build'),
+    // publicPath: path.join(__dirname, 'assets'),
     filename: 'bundle.js',
+  },
+  watchOptions: { // https://www.wolfe.id.au/2015/08/08/development-with-webpack-and-docker/
+    poll: 1000,
+    aggregateTimeout: 1000,
   },
   target: 'node',
   resolve: {
-    modules: [__dirname, 'node_modules'],
-    extensions: ['*','.js','.jsx']
+    extensions: ['.js', '.jsx'],
+    modules: [SOURCE_FOLDER, 'node_modules'],
   },
+  externals: [webpackNodeExternals()],
   module: {
-    rules: [
-      {
-        test: /\.js?$/,
-        loader: 'babel-loader',
-        //exclude: /node_modules/
-      }
-    ]
-  }
+    rules: [{
+      test: /\.js?$/,
+      loader: 'babel-loader',
+    }],
+  },
 };
 
 module.exports = config;

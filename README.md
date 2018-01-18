@@ -1,15 +1,21 @@
-# corretora
+# Corretora
 
-## todo
+## How to dev
 
-- Organizar melhor scripts npm do projeto e builds
-- Configurar o restante das APIs
-- Criar ambiente em docker
-- Alterar banco de dados para postgress
-- Arrumar autenticação
-- Colocar botões do menu para direita
+- Create file desenv.config.js on /api/src/config
+- Overhide what you want that is in index.js file in this directory (like mongo url, for example)
+- On terminal:
+    - `cd /api`
+    - `npm run dev`
+- On Browser:
+    - `http://localhost:5000/exchanges` 
 
-## done
+## Tips
 
-- Acessar APIs
-- Colocar /api com webpack
+- docker build -t hackershall-dev-i -f dev.dockerfile .
+- docker run --name hackershall-dev-app -p 7000:7000 -v $(pwd):/var/app hackershall-dev-i
+
+## Todo's
+
+- DO the Docker works for develop
+- Verify this security problem: https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
