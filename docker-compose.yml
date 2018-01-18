@@ -1,7 +1,7 @@
 # environment:
 #   #- MONGO_INITDB_ROOT_USERNAME=user
 #   #- MONGO_INITDB_ROOT_PASSWORD=password
-#   - MONGO_INITDB_DATABASE="diary"
+#   - MONGO_INITDB_DATABASE="corretora"
 
 version: "2.1"
 
@@ -20,15 +20,15 @@ services:
   #     - "80:80"
 
   app:
-    container_name: diary-app
-    image: diary-image
+    container_name: corretora-app
+    image: corretora-image
     build:
       context: .
       dockerfile: ./.docker/api.dev.dockerfile
     ports:
       - "4000:5000"
     networks:
-      - diary-network
+      - corretora-network
     # volumes:
       # - .:/home/app
     env_file:
@@ -38,7 +38,7 @@ services:
       - mongo
 
   mongo:
-    container_name: diary-mongodb
+    container_name: corretora-mongodb
     image: mongo:3.4.1
     build:
       context: .
@@ -46,10 +46,10 @@ services:
     env_file:
       - ./.docker/env/mongo.dev.env
     networks:
-      - diary-network
+      - corretora-network
     ports:
       - "27018:27017"
 
 networks:
-  diary-network:
+  corretora-network:
     driver: bridge

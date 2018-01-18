@@ -1,11 +1,11 @@
 {
   "name": "diario",
   "version": "1.0.0",
-  "description": "Diary of daily activities",
+  "description": "Corretora of daily activities",
   "keywords": [
     "node",
     "react",
-    "diary",
+    "corretora",
     "postgress",
     "OAuth"
   ],

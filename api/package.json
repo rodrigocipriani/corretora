@@ -1,7 +1,7 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "Api of Diary of daily activities",
+  "description": "Api of Corretora",
   "main": "index.js",
   "scripts": {
     "start": "node .\\src\\index.js",
@@ -15,7 +15,7 @@
   "keywords": [
     "node",
     "react",
-    "diary",
+    "corretora",
     "postgress",
     "OAuth"
   ],

@@ -24,7 +24,7 @@ app.use(morgan('combined'));
 app.use(bodyParse.json({ type: '*/*' }));
 
 app.get('/', (req, res) => {
-  res.send('Diary API');
+  res.send('Corretora API');
 });
 
 // requiring routes

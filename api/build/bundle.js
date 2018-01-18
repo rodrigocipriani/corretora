@@ -258,7 +258,7 @@ app.use((0, _morgan2.default)('combined'));
 app.use(_bodyParser2.default.json({ type: '*/*' }));
 
 app.get('/', function (req, res) {
-  res.send('Diary API');
+  res.send('Corretora API');
 });
 
 // requiring routes
